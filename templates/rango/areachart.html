@@ -1,0 +1,28 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+
+
+{% block title_block %}
+Area Chart
+{% endblock %}
+
+{% block body_block %}
+<!-- Area Chart -->
+<div class="col-xl-8 col-lg-7">
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+    </div>
+    <div class="card-body">
+      <div class="chart-area">
+        <canvas id="myAreaChart"></canvas>
+      </div>
+      <hr>
+      El estilo está en el archivo
+      <code>/static/js/chart-area.js</code>.
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
