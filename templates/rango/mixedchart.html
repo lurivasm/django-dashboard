@@ -1,0 +1,28 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+
+
+{% block title_block %}
+Mixed Chart
+{% endblock %}
+
+{% block body_block %}
+<!-- Mixed Chart -->
+<div class="col-xl-8 col-lg-7">
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Mixed Chart</h6>
+    </div>
+    <div class="card-body">
+      <div class="chart-area">
+        <canvas id="myMixedChart"></canvas>
+      </div>
+      <hr>
+      El estilo está en el archivo
+      <code>/static/js/chart-mixed.js</code>.
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

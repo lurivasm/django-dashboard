@@ -17,7 +17,7 @@ reset_db: clear_db update_db populate
 clear_db:
 	@echo Clear Database
 	dropdb --if-exists $(PGDATABASE)
-	createdb
+
 
 shell:
 	@echo create psql shell

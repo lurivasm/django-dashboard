@@ -30,6 +30,9 @@ def donutchart(request):
 def barchart(request):
     return render(request, 'rango/barchart.html')
 
+def mixedchart(request):
+    return render(request, 'rango/mixedchart.html')
+
 def table(request):
     return render(request, 'rango/table.html')
 

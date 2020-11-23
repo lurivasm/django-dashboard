@@ -2,86 +2,73 @@
 Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
-
-// Bar Chart Example
 var chart_html = document.getElementById("myBarChart");
-var myBarChart = new Chart(chart_html, {
-  type: 'bar',
-  data: {
-    labels: ["January", "February", "March", "April", "May", "June"],
-    datasets: [{
-      label: "Revenue",
-      backgroundColor: "#4e73df",
-      hoverBackgroundColor: "#2e59d9",
-      borderColor: "#4e73df",
-      data: [4215, 5312, 6251, 7841, 9821, 14984],
-    }],
-  },
-  options: {
-    maintainAspectRatio: false,
-    layout: {
-      padding: {
-        left: 10,
-        right: 25,
-        top: 25,
-        bottom: 0
-      }
-    },
-    scales: {
-      xAxes: [{
-        time: {
-          unit: 'month'
-        },
-        gridLines: {
-          display: false,
-          drawBorder: false
-        },
-        ticks: {
-          maxTicksLimit: 6
-        },
-        maxBarThickness: 25,
-      }],
-      yAxes: [{
-        ticks: {
-          min: 0,
-          max: 15000,
-          maxTicksLimit: 5,
-          padding: 10,
-          // Include a dollar sign in the ticks
-          callback: function(value, index, values) {
-            return '$' + number_format(value);
-          }
-        },
-        gridLines: {
-          color: "rgb(234, 236, 244)",
-          zeroLineColor: "rgb(234, 236, 244)",
-          drawBorder: false,
-          borderDash: [2],
-          zeroLineBorderDash: [2]
+new Chart(chart_html, {
+    type: 'bar',
+    data: {
+      labels: ["January", "February", "March", "April", "May"],
+      datasets: [
+        {
+          label: "Revenue", // un color para cada barra
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          borderColor: "#4e73df",
+          data: [4215, 5312, 6251, 7841, 9821],
         }
-      }],
+      ]
     },
-    legend: {
-      display: false
-    },
-    tooltips: {
-      titleMarginBottom: 10,
-      titleFontColor: '#6e707e',
-      titleFontSize: 14,
-      backgroundColor: "rgb(255,255,255)",
-      bodyFontColor: "#858796",
-      borderColor: '#dddfeb',
-      borderWidth: 1,
-      xPadding: 15,
-      yPadding: 15,
-      displayColors: false,
-      caretPadding: 10,
-      callbacks: {
-        label: function(tooltipItem, chart) {
-          var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
-        }
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Revenue per month'
       }
+    }
+});
+
+var chart_html = document.getElementById("myHorizontalChart");
+new Chart(chart_html, {
+    type: 'horizontalBar',
+    data: {
+      labels: ["January", "February", "March", "April", "May"],
+      datasets: [
+        {
+          label: "Revenue", // un color para cada barra
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          borderColor: "#4e73df",
+          data: [4215, 5312, 6251, 7841, 9821],
+        }
+      ]
     },
-  }
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Revenue per month'
+      }
+    }
+});
+
+var chart_html = document.getElementById("myBarGroupChart");
+new Chart(chart_html, {
+    type: 'bar',
+    data: {
+      labels: ["1900", "1950", "1999", "2050"],
+      datasets: [
+        {
+          label: "Africa",
+          backgroundColor: "#3e95cd",
+          data: [133,221,783,2478]
+        }, {
+          label: "Europe",
+          backgroundColor: "#8e5ea2",
+          data: [408,547,675,734]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Population growth (millions)'
+      }
+    }
 });
